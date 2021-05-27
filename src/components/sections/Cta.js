@@ -53,8 +53,11 @@ const Cta = ({
         >
           <div className="cta-slogan">
             <h3 className="m-0">
-              For previewing layouts and visual?
+              Wanna hear about acessibility trends?
               </h3>
+            <h6>
+              Let me write to you every month or so
+            </h6>
           </div>
           <div className="cta-action">
             <Input id="newsletter" type="email" label="Subscribe" labelHidden hasIcon="right" placeholder="Your best email">
