@@ -5,6 +5,8 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
+import ReactDOM from 'react-dom'
+import Sketch from 'react-p5'
 
 const propTypes = {
   ...SectionProps.types
@@ -12,6 +14,14 @@ const propTypes = {
 
 const defaultProps = {
   ...SectionProps.defaults
+}
+
+const setup = (p5) => {
+  p5.createCanvas(400,400)
+}
+
+const draw = (p5) => {
+  p5.background(255, 204, 0)
 }
 
 const Hero = ({
@@ -52,6 +62,9 @@ const Hero = ({
     bottomDivider && 'has-bottom-divider'
   );
 
+
+
+
   return (
     <section
       {...props}
@@ -63,6 +76,10 @@ const Hero = ({
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
               Hi, I'm Andy.<span className="text-color-primary">👋</span>
             </h1>
+            <Sketch
+              setup={setup}
+              draw={draw}
+            />
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
                 I like design, accessibility, and cartography

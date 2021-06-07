@@ -3,6 +3,7 @@ import { useLocation, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
+import p5 from 'p5'
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
@@ -17,6 +18,14 @@ const trackPage = page => {
   ReactGA.set({ page });
   ReactGA.pageview(page);
 };
+
+function setup(){
+  p5.createCanvas(400, 400);
+}
+
+function draw(){
+  p5.background(255,204,100)
+}
 
 const App = () => {
 
