@@ -8,6 +8,7 @@ import Modal from '../elements/Modal';
 import ReactDOM from 'react-dom'
 import Sketch from 'react-p5'
 
+
 const propTypes = {
   ...SectionProps.types
 }
@@ -23,12 +24,19 @@ const setup = (p5) => {
   //p5.background(255, 204, 0)
 }
 
-const draw = (p5) => {
+const rainbow = [[148,0,211],[75,0,130],[0,0,255],[0,255,0],[255,255,0],[255,127,0],[255,0,0]]
+
+const draw = (p5) => {  
   if(p5.mouseIsPressed){
+    const hue = rainbow[Math.floor(Math.random()*rainbow.length)]
     p5.line(p5.pmouseX,p5.pmouseY,p5.mouseX,p5.mouseY)
     p5.strokeWeight(4)
-    p5.stroke(p5.color(0, 0, 255))
+    p5.stroke(p5.color(hue))
   }
+}
+
+const clearCanvas = (p5) => {
+  p5.clear();
 }
 
 const Hero = ({
@@ -70,14 +78,13 @@ const Hero = ({
   );
 
 
-
-
   return (
     <section
       {...props}
       className={outerClasses}
     >
       <div className="container-sm">
+        <Button tag="clear" onClick={clearCanvas}>clear drawings</Button>
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
