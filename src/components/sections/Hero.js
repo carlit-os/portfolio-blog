@@ -35,9 +35,7 @@ const draw = (p5) => {
   }
 }
 
-const clearCanvas = (p5) => {
-  p5.clear();
-}
+
 
 const Hero = ({
   className,
@@ -84,7 +82,6 @@ const Hero = ({
       className={outerClasses}
     >
       <div className="container-sm">
-        <Button tag="clear" onClick={clearCanvas}>clear drawings</Button>
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
@@ -97,6 +94,9 @@ const Hero = ({
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
                 I like design, accessibility, and cartography
+                </p>
+                <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
+                You can draw on this page by the way
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
